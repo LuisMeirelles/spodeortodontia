@@ -9,6 +9,7 @@ const Navbar = () => (
     <Container>
         <NavMenu>
             <NavItem><NavLink to="/">Página Inicial</NavLink></NavItem>
+            <NavItem><NavLink to="/criar-post">Criar Novo Post</NavLink></NavItem>
             <NavItem><NavLink to="/chat">Chat</NavLink></NavItem>
         </NavMenu>
     </Container>

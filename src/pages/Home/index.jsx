@@ -21,19 +21,16 @@ const Home = () => {
     }, []);
 
     return (
-        <>
-            {/* <Aside /> */}
-            <Article>
-                {posts?.map(post => (
-                    <Card to={`/post/${post.id}`}>
-                        <h1>{post.title}</h1>
-                        <div>
-                            <ReactMarkdown>{post.description || '<Sem Descrição>'}</ReactMarkdown>
-                        </div>
-                    </Card>
-                ))}
-            </Article>
-        </>
+        <Article>
+            {posts?.map(post => (
+                <Card to={`/post/${post.id}`}>
+                    <h1>{post.title}</h1>
+                    <div>
+                        <ReactMarkdown>{post.description || '<Sem Descrição>'}</ReactMarkdown>
+                    </div>
+                </Card>
+            ))}
+        </Article>
     );
 };
 

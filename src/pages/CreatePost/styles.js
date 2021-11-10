@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Aside = styled.aside`
     width: 25vw;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     position: sticky;
     top: 4rem;
 `;

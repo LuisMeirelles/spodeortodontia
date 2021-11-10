@@ -8,7 +8,7 @@ export const Article = styled.article`
 
 export const Aside = styled.aside`
     width: 25vw;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     margin-top: 2rem;
     position: sticky;
     top: 4rem;

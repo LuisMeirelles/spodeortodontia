@@ -23,7 +23,10 @@ const Home = () => {
     return (
         <Article>
             {posts?.map(post => (
-                <Card to={`/post/${post.id}`}>
+                <Card
+                    key={post.id}
+                    to={`/post/${post.id}`}
+                >
                     <h1>{post.title}</h1>
                     <div>
                         <ReactMarkdown>{post.description || '<Sem Descrição>'}</ReactMarkdown>

@@ -2,10 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --color-primary: #800000;
-        --color-secondary: #003000;
-        --color-secondary-dark: #002A00;
-        --color-tertiary: #D6D6D6;
+        --color-primary: #89213a;
+        --color-primary-dark: #600000;
+        --color-secondary: #f4be60;
+        --color-tertiary: #FAFAFA;
     }
 
     * {
@@ -13,11 +13,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         outline: none;
         box-sizing: border-box;
-
-        ::selection {
-            color: var(--color-tertiary);
-            background-color: #002A00;
-        }
     }
 
     html,
@@ -33,13 +28,17 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: sans-serif;
-        color: var(--color-primary);
-        background-color: --color-tertiary;
+        background-color: var(--color-tertiary);
     }
 
     #root {
         display: flex;
         flex-direction: column;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary);
     }
 `;
 

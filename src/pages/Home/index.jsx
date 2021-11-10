@@ -1,16 +1,38 @@
-import { useNavigate } from 'react-router-dom';
+import {
+    useEffect,
+    useState
+} from 'react';
 
-import { Aside } from './styles';
+import {
+    Article,
+    Card
+} from './styles';
+
+import postsMock from '../../assets/misc/postsMock.json';
+import ReactMarkdown from 'react-markdown';
 
 const Home = () => {
-    const navigate = useNavigate();
+    const [posts, setPosts] = useState();
+
+    useEffect(() => {
+        setTimeout(() => {
+            setPosts(postsMock);
+        }, 500);
+    }, []);
 
     return (
         <>
-            <Aside />
-            <div>
-                <button onClick={() => navigate('/post/1')}>ir para post 1</button>
-            </div>
+            {/* <Aside /> */}
+            <Article>
+                {posts?.map(post => (
+                    <Card to={`/post/${post.id}`}>
+                        <h1>{post.title}</h1>
+                        <div>
+                            <ReactMarkdown>{post.description || '<Sem Descrição>'}</ReactMarkdown>
+                        </div>
+                    </Card>
+                ))}
+            </Article>
         </>
     );
 };

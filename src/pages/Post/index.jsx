@@ -28,6 +28,9 @@ const Post = () => {
             </Aside>
             <Article>
                 <h1>{post.title}</h1>
+                <Section>
+                    <ReactMarkdown>{post.description}</ReactMarkdown>
+                </Section>
                 {post.sections.map(({ title, content, id }) => (
                     <Section key={id} id={id}>
                         <h2>{title}</h2>

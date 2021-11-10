@@ -8,4 +8,9 @@ export const Container = styled.footer`
     color: var(--color-tertiary);
     height: 3rem;
     padding: 1rem;
+
+    a {
+        font-weight: bolder;
+        color: var(--color-tertiary);
+    }
 `;

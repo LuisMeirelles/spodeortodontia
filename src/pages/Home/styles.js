@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const Article = styled.article`
+    width: 75%;
+    margin: 1rem;
+`;
 
 export const Aside = styled.aside`
     width: 25vw;
@@ -8,49 +14,26 @@ export const Aside = styled.aside`
     top: 4rem;
 `;
 
-export const Menu = styled.ul`
-    list-style: none;
-`;
-
-export const MenuItem = styled.li`
-`;
-
-export const LinkItem = styled.a`
-    width: 100%;
+export const Card = styled(Link)`
     display: block;
-    padding: 0.5rem;
-    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 
-    :hover,
-    :focus {
-        background-color: var(--color-secondary);
-        color: var(--color-tertiary);
-    }
-`;
-
-export const Article = styled.article`
-    flex-grow: 1;
-    width: min-content;
-    margin: 0.5rem 1rem 1rem 1rem;
-
-    ul {
-        margin: 1rem 0 1rem 2rem;
+    & + & {
+        margin-top: 1rem;
     }
 
-    ol {
-        margin: 1rem 0 1rem 1.5rem;
+    div {
+        max-height: 3.5rem;
+        overflow: hidden;
+
+        p {
+            text-indent: 1rem;
+            text-overflow: ellipsis;
+            width: 100%;
+            overflow: hidden;
+        }
     }
-`;
-
-export const Section = styled.section`
-    padding-top: 2rem;
-`;
-
-export const SectionTitle = styled.h2`
-    margin-bottom: 0.5rem;
-`;
-
-export const Paragraph = styled.p`
-    margin-bottom: 0.5rem;
-    text-indent: 1.5rem;
 `;

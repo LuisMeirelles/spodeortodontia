@@ -9,16 +9,12 @@ import {
     Aside,
     LinkItem,
     Menu,
-    MenuItem,
     Section
 } from './styles';
 
 const Post = () => {
     const { id } = useParams();
-    const [post, setPost] = useState({
-        title: '',
-        sections: []
-    });
+    const [post, setPost] = useState();
 
     useEffect(() => {
         let isMounted = true;
@@ -33,7 +29,7 @@ const Post = () => {
 
                 console.log({ ...error });
             }
-        }
+        };
 
         if (isMounted) {
             fetch();
@@ -46,17 +42,16 @@ const Post = () => {
         <>
             <Aside>
                 <Menu>
-                    {post.sections.map(({ title, id }) => (
-                        <MenuItem key={id}><LinkItem href={`#${id}`}>{title}</LinkItem></MenuItem>
+                    {post?.sections.map(({ title, id }) => (
+                        <li key={id}><LinkItem href={`#${id}`}>{title}</LinkItem></li>
                     ))}
                 </Menu>
             </Aside>
             <Article>
-                <h1>{post.title}</h1>
-                <Section>
-                    <ReactMarkdown>{post.description}</ReactMarkdown>
-                </Section>
-                {post.sections.map(({ title, content, id }) => (
+                <h1>{post?.title}</h1>
+                <ReactMarkdown>{post?.description}</ReactMarkdown>
+                
+                {post?.sections.map(({ title, content, id }) => (
                     <Section key={id} id={id}>
                         <h2>{title}</h2>
                         <ReactMarkdown>

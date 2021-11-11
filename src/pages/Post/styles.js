@@ -11,9 +11,6 @@ export const Menu = styled.ul`
     list-style: none;
 `;
 
-export const MenuItem = styled.li`
-`;
-
 export const LinkItem = styled.a`
     width: 100%;
     display: block;
@@ -33,6 +30,10 @@ export const Article = styled.article`
     width: min-content;
     margin: 1rem;
 
+    p {
+        text-indent: 1rem;
+    }
+
     ul {
         margin: 1rem 0 1rem 2rem;
     }
@@ -45,11 +46,7 @@ export const Article = styled.article`
 export const Section = styled.section`
     padding-top: 2rem;
 
-    p {
-        text-indent: 1rem;
-    }
-
-    h2 {
+    h2, h1 {
         margin-bottom: 0.5rem;
     }
 `;

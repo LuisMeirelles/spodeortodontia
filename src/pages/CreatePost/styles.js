@@ -10,9 +10,6 @@ export const Menu = styled.ul`
     list-style: none;
 `;
 
-export const MenuItem = styled.li`
-`;
-
 export const LinkItem = styled.a`
     width: 100%;
     display: block;

@@ -23,6 +23,10 @@ export const Card = styled(Link)`
         margin-top: 1rem;
     }
 
+    h1 {
+        margin-bottom: 0.5;
+    }
+
     div {
         max-height: 3.5rem;
         overflow-y: hidden;

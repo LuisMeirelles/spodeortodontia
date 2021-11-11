@@ -8,10 +8,8 @@ export const Article = styled.article`
 
 export const Aside = styled.aside`
     width: 25vw;
-    /* flex-grow: 1; */
-    margin-top: 2rem;
     position: sticky;
-    top: 4rem;
+    top: 2rem;
 `;
 
 export const Card = styled(Link)`
@@ -27,13 +25,10 @@ export const Card = styled(Link)`
 
     div {
         max-height: 3.5rem;
-        overflow: hidden;
+        overflow-y: hidden;
 
         p {
             text-indent: 1rem;
-            text-overflow: ellipsis;
-            width: 100%;
-            overflow: hidden;
         }
     }
 `;

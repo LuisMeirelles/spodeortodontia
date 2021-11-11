@@ -3,21 +3,37 @@ import {
     useState
 } from 'react';
 
+import ReactMarkdown from 'react-markdown';
+
 import {
     Article,
     Card
 } from './styles';
 
-import postsMock from '../../assets/misc/postsMock.json';
-import ReactMarkdown from 'react-markdown';
+import api from '../../services/api';
 
 const Home = () => {
     const [posts, setPosts] = useState();
 
     useEffect(() => {
-        setTimeout(() => {
-            setPosts(postsMock);
-        }, 500);
+        let isMounted = true;
+
+        const fetch = async () => {
+            try {
+                const { data } = await api.get('/posts');
+
+                setPosts(data.posts);
+            } catch (error) {
+                alert(error.message);
+                console.log({ ...error });
+            }
+        };
+
+        if (isMounted) {
+            fetch();
+        }
+
+        return () => isMounted = false;
     }, []);
 
     return (

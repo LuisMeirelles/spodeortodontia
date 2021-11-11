@@ -1,8 +1,8 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
-import posts from '../../assets/misc/postsMock.json';
+import api from '../../services/api';
 
 import {
     Article,
@@ -14,8 +14,33 @@ import {
 } from './styles';
 
 const Post = () => {
-    const { id: postId } = useParams();
-    const post = posts.find(value => value.id === Number.parseInt(postId));
+    const { id } = useParams();
+    const [post, setPost] = useState({
+        title: '',
+        sections: []
+    });
+
+    useEffect(() => {
+        let isMounted = true;
+
+        const fetch = async () => {
+            try {
+                const { data } = await api.get(`/posts/${id}`);
+
+                setPost(data.post);
+            } catch (error) {
+                alert(error.message);
+
+                console.log({ ...error });
+            }
+        }
+
+        if (isMounted) {
+            fetch();
+        }
+
+        return () => isMounted = false;
+    });
 
     return (
         <>

@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const Aside = styled.aside`
     width: 25vw;
-    /* flex-grow: 1; */
     position: sticky;
-    top: 4rem;
+    align-self: flex-start;
+    top: 2rem;
 `;
 
 export const Menu = styled.ul`
     list-style: none;
-    margin-top: 2rem;
 `;
 
 export const MenuItem = styled.li`

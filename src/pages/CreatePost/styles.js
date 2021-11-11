@@ -32,12 +32,16 @@ export const Article = styled.article`
     width: min-content;
     margin: 1rem;
 
+    div[contenteditable="true"] > p {
+        text-indent: 1rem;
+    }
+
     ul {
-        margin: 1rem 0 1rem 2rem;
+        margin: 1rem 0 1rem 1rem;
     }
 
     ol {
-        margin: 1rem 0 1rem 2rem;
+        margin: 1rem 0 1rem 1rem;
     }
 `;
 

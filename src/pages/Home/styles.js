@@ -16,11 +16,18 @@ export const Card = styled(Link)`
     display: block;
     width: 100%;
     padding: 1rem;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    border-top: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    transition: color 0.2s, background-color 0.2s;
 
-    & + & {
-        margin-top: 1rem;
+    :last-of-type {
+        border-bottom: 1px solid var(--color-primary);
+    }
+
+    :focus,
+    :hover {
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
     }
 
     h1 {
